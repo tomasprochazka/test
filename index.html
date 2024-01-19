@@ -1,3 +1,68 @@
-<html>
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Distance Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Add custom styles here if needed */
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Nearby Trees</h1>
+        <ul id="treeList" class="list-disc">
+            <!-- Tree list will be populated here -->
+        </ul>
+    </div>
+
+    <script>
+        // Example tree data
+        const trees = [
+            { name: "Vranik Tree", coordinates: { lat: 49.848152, lng: 14.921545 } },
+
+            , 
+            { name: "Steve Jobs Tree", coordinates: { lat: 49.85182956, lng: 14.926612832 } },
+
+
+            // Add more trees here
+        ];
+
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            // Haversine formula to calculate distance
+            const R = 6371; // Radius of the Earth in km
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                      Math.sin(dLon/2) * Math.sin(dLon/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return R * c; // Distance in km
+        }
+
+        function displayTrees() {
+            if (!navigator.geolocation) {
+                alert("Geolocation is not supported by your browser");
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition((position) => {
+                const { latitude, longitude } = position.coords;
+                const treeList = document.getElementById('treeList');
+                treeList.innerHTML = '';
+
+                trees.forEach(tree => {
+                    const distance = calculateDistance(latitude, longitude, tree.coordinates.lat, tree.coordinates.lng);
+                    treeList.innerHTML += `<li class="mb-2">${tree.name} - ${distance.toFixed(2)} km away</li>`;
+                });
+            }, () => {
+                alert("Unable to retrieve your location");
+            });
+        }
+
+        // Run the display function
+        displayTrees();
+    </script>
+</body>
 </html>
