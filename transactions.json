@@ -1,0 +1,92 @@
+[
+  {
+    "transaction_name": "Starbucks Coffee",
+    "amount": -4.50,
+    "payment_category": "Coffee",
+    "emoji": "☕",
+    "date": "2024-09-01",
+    "venue": "Starbucks",
+    "type": "debit"
+  },
+  {
+    "transaction_name": "Rent Payment",
+    "amount": -750.00,
+    "payment_category": "Rent",
+    "emoji": "🏠",
+    "date": "2024-09-01",
+    "account_number": "DE1234567890",
+    "type": "debit"
+  },
+  {
+    "transaction_name": "Salary",
+    "amount": 2000.00,
+    "payment_category": "Income",
+    "emoji": "💼",
+    "date": "2024-09-01",
+    "account_number": "ABC123456789",
+    "type": "credit"
+  },
+  {
+    "transaction_name": "Groceries",
+    "amount": -55.30,
+    "payment_category": "Groceries",
+    "emoji": "🛒",
+    "date": "2024-09-03",
+    "venue": "Walmart",
+    "type": "debit"
+  },
+  {
+    "transaction_name": "Dinner with Friends",
+    "amount": -40.00,
+    "payment_category": "Dining",
+    "emoji": "🍽️",
+    "date": "2024-09-04",
+    "venue": "Olive Garden",
+    "type": "debit"
+  },
+  {
+    "transaction_name": "Uber Ride",
+    "amount": -12.50,
+    "payment_category": "Transport",
+    "emoji": "🚗",
+    "date": "2024-09-05",
+    "venue": "Uber",
+    "type": "debit"
+  },
+  {
+    "transaction_name": "Refund from Amazon",
+    "amount": 25.00,
+    "payment_category": "Refund",
+    "emoji": "🔄",
+    "date": "2024-09-06",
+    "venue": "Amazon",
+    "type": "credit"
+  },
+  {
+    "transaction_name": "Gym Membership",
+    "amount": -45.00,
+    "payment_category": "Fitness",
+    "emoji": "💪",
+    "date": "2024-09-06",
+    "venue": "Gold's Gym",
+    "type": "debit"
+  },
+  {
+    "transaction_name": "Electricity Bill",
+    "amount": -100.00,
+    "payment_category": "Utilities",
+    "emoji": "💡",
+    "date": "2024-09-07",
+    "account_number": "UTL123456789",
+    "type": "debit"
+  },
+  {
+    "transaction_name": "Gift from John",
+    "amount": 100.00,
+    "payment_category": "Gift",
+    "emoji": "🎁",
+    "date": "2024-09-07",
+    "account_number": "JN123456789",
+    "type": "credit"
+  }
+]
